@@ -44,7 +44,7 @@ public class Main extends Application {
         stage.setTitle("Login");
         stage.show();
 
-        loginBtn.setOnAction(e -> {
+        loginBtn.setOnAction(_ -> {
             String role = roleBox.getValue();
             String username = usernameField.getText();
             String password = passwordField.getText();
@@ -67,7 +67,7 @@ public class Main extends Application {
             }
         });
 
-        registerBtn.setOnAction(e -> showRegisterScreen(stage));
+        registerBtn.setOnAction(_ -> showRegisterScreen(stage));
     }
 
     public void showRegisterScreen(Stage stage) {
@@ -95,7 +95,7 @@ public class Main extends Application {
         stage.setScene(scene);
         stage.setTitle("Register");
 
-        registerBtn.setOnAction(e -> {
+        registerBtn.setOnAction(_ -> {
             String role = roleBox.getValue();
             String username = usernameField.getText();
             String password = passwordField.getText();
@@ -113,7 +113,7 @@ public class Main extends Application {
             }
         });
 
-        backBtn.setOnAction(e -> showLoginScreen(stage));
+        backBtn.setOnAction(_ -> showLoginScreen(stage));
     }
 
     public boolean userExists(String username) {

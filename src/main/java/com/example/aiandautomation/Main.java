@@ -4,21 +4,21 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
-import javafx.stage.Stage;
+import javafx.stage.Stage; 
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Main extends Application {
 
-    private List<User> users = new ArrayList<>(); // In-memory user store
+    public List<User> users = new ArrayList<>(); // In-memory user store
 
     @Override
     public void start(Stage primaryStage) {
         showLoginScreen(primaryStage);
     }
 
-    private void showLoginScreen(Stage stage) {
+    public void showLoginScreen(Stage stage) {
         Label title = new Label("Login");
         title.setStyle("-fx-font-size: 20px; -fx-font-weight: bold;");
 
@@ -70,7 +70,7 @@ public class Main extends Application {
         registerBtn.setOnAction(e -> showRegisterScreen(stage));
     }
 
-    private void showRegisterScreen(Stage stage) {
+    public void showRegisterScreen(Stage stage) {
         Label title = new Label("Register");
         title.setStyle("-fx-font-size: 20px; -fx-font-weight: bold;");
 
@@ -116,11 +116,11 @@ public class Main extends Application {
         backBtn.setOnAction(e -> showLoginScreen(stage));
     }
 
-    private boolean userExists(String username) {
+    public boolean userExists(String username) {
         return users.stream().anyMatch(u -> u.getUsername().equals(username));
     }
 
-    private User findUser(String username, String password, String role) {
+    public User findUser(String username, String password, String role) {
         return users.stream()
                 .filter(u -> u.getUsername().equals(username)
                         && u.getPassword().equals(password)
@@ -134,8 +134,9 @@ public class Main extends Application {
     }
 
     // Inner User class for storing user data
-    private static class User {
-        private String username, password, role;
+    public static class User {
+        public
+        String username, password, role;
 
         public User(String username, String password, String role) {
             this.username = username;
